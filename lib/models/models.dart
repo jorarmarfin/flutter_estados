@@ -1,0 +1,1 @@
+export 'package:flutter_estados/models/usuario_model.dart';
