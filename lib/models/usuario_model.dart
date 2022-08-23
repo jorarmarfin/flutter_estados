@@ -1,7 +1,7 @@
 class UsuarioModel {
-  final String nombre;
-  final String edad;
-  final List<String> profesiones;
+  String nombre;
+  String edad;
+  List<String> profesiones;
 
   UsuarioModel(this.nombre, this.edad, this.profesiones);
 }
