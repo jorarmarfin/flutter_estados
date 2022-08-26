@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_estados/bloc/usuario/usuario_cubic.dart';
 
 import 'screens/screens.dart';
 
@@ -9,13 +11,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Material App',
-      initialRoute: HomeScreen.routerName,
-      routes: {
-        HomeScreen.routerName: (context) => const HomeScreen(),
-        ContenidoScreen.routerName: (context) => const ContenidoScreen(),
-      },
+    return MultiBlocProvider(
+      providers: [BlocProvider(create: (_) => UsuarioCubic())],
+      child: MaterialApp(
+        title: 'Material App',
+        initialRoute: HomeScreen.routerName,
+        routes: {
+          HomeScreen.routerName: (context) => const HomeScreen(),
+          ContenidoScreen.routerName: (context) => const ContenidoScreen(),
+        },
+      ),
     );
   }
 }
